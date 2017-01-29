@@ -17,7 +17,7 @@
            "containers": [
      	     {
         	"name": "frontend",
-	        "image": "musicstore:v0",
+	        "image": "musicstore:v1",
         	"ports": [
           	    {
             		"containerPort": 80

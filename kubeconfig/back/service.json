@@ -14,7 +14,7 @@
                 "protocol": "TCP",
 		"port": 80,
                 "targetPort": 9000,
-		"nodePort": 32465
+		"nodePort": 32495
             }
         ],
         "type": "LoadBalancer"

@@ -26,7 +26,7 @@
             },
             {
                  "name": "backend",
-                 "image": "api-musicstore:v0",
+                 "image": "api-musicstore:v1",
        		 "ports": [
            	     {
            		 "containerPort": 9000
