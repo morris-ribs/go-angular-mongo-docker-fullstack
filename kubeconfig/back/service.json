@@ -1,0 +1,22 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+	"namespace":"musicstore",
+        "name": "api-musicstore"
+    },
+    "spec": {
+        "selector": {
+            "app": "api-musicstore"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+		"port": 80,
+                "targetPort": 9000,
+		"nodePort": 32465
+            }
+        ],
+        "type": "LoadBalancer"
+    }
+}

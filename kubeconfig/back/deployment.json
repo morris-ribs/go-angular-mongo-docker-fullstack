@@ -1,0 +1,41 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "namespace":"musicstore",
+    "name": "api-musicstore"
+  },
+  "spec": {
+    "replicas": 3,
+    "template":{
+        "metadata": {  
+           "labels": {
+               "app": "api-musicstore"
+            }
+         },
+        "spec":{	    
+           "containers": [
+            {
+               "name": "db",
+               "image": "mongo",
+                "ports": [
+                    {
+                  	 "containerPort": 27017
+                    }
+                 ]
+            },
+            {
+                 "name": "backend",
+                 "image": "api-musicstore:v0",
+       		 "ports": [
+           	     {
+           		 "containerPort": 9000
+          	     }
+       		  ]
+     	     }
+           ]
+
+        }
+    }
+  }
+}
