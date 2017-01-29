@@ -6,14 +6,16 @@ import (
 
 	"github.com/gorilla/handlers"
 
-	albumRoutes "musicstore/album"
+	"musicstore/album"
 )
 
 func main() {
-	router := albumRoutes.NewRouter()
+	router := album.NewRouter()
+
+	allowedOrigins := handlers.AllowedOrigins([]string{"*"})
+	allowedMethods := handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "PUT"})
 
 	// launch server
 	log.Fatal(http.ListenAndServe(":9000",
-		handlers.CORS(handlers.AllowedOrigins([]string{"*"}), handlers.AllowedMethods([]string{"GET", "POST", "DELETE", "OPTIONS", "PUT", "UPDATE"}))(router)))
-
+		handlers.CORS(allowedOrigins, allowedMethods)(router)))
 }

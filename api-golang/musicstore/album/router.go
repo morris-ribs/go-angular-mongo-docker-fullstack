@@ -36,7 +36,7 @@ var routes = Routes{
 	},
 	Route{
 		"UpdateAlbum",
-		"UPDATE",
+		"PUT",
 		"/",
 		controller.UpdateAlbum,
 	},

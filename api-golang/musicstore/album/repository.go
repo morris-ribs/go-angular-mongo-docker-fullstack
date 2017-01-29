@@ -51,7 +51,7 @@ func (r Repository) AddAlbum(album Album) bool {
 	return true
 }
 
-// UpdateAlbum updates a Album in the DB
+// UpdateAlbum updates an Album in the DB
 func (r Repository) UpdateAlbum(album Album) bool {
 	session, err := mgo.Dial(SERVER)
 	defer session.Close()
@@ -66,7 +66,7 @@ func (r Repository) UpdateAlbum(album Album) bool {
 	return true
 }
 
-// DeleteAlbum deletes a Album
+// DeleteAlbum deletes an Album
 func (r Repository) DeleteAlbum(id string) string {
 	session, err := mgo.Dial(SERVER)
 	defer session.Close()
