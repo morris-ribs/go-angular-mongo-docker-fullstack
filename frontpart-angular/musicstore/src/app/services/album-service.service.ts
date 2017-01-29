@@ -9,7 +9,8 @@ export class AlbumService {
 
   constructor(private http: Http) { }
 
-  private albumsUrl = 'http://localhost:9000/'; 
+  // this is the endpoint of our REST API service in Go
+  private albumsUrl = 'http://192.168.99.100:32495'; 
 
   // Fetch all existing albums
      getAlbums() : Observable<Album[]> {
