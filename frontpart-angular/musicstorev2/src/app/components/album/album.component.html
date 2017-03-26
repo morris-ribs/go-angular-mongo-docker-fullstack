@@ -1,0 +1,23 @@
+<md-list *ngIf="albums && albums.length">
+  <h3 md-subheader>Your list of albums</h3>
+  <md-list-item *ngFor="let album of albums">
+    <md-icon md-list-avatar>folder</md-icon>
+    <h4 md-line>{{album.title}}</h4>
+    <p md-line> {{album.artist}} ({{album.year}}) </p>
+  </md-list-item>  
+</md-list>
+<md-divider></md-divider>
+    <!-- Area for mutation -->
+     You can also create discs here : <br />
+
+<md-input-container>
+    <input mdInput placeholder="Title" [(ngModel)]='model.title' />
+</md-input-container>
+<md-input-container>
+    <input mdInput placeholder="Artist" [(ngModel)]='model.artist' />
+</md-input-container>
+<md-input-container>
+    <input mdInput placeholder="Year" type="number" [(ngModel)]='model.year' />
+</md-input-container>
+
+<button md-raised-button (click)='submitAlbum()'>Add</button>
